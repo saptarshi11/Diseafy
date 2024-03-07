@@ -68,7 +68,7 @@ const Footer = () => {
         <div className="footer-bottom">
           Made by{" "}
           <a
-            href="https://www.linkedin.com"
+            href="https://github.com/saptarshi11/Diseafy"
             target="_blank"
             rel="noreferrer"
           >
