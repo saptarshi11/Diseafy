@@ -37,6 +37,11 @@ const Navbar = () => {
           <li>
             <NavLink to={"/"}>Home</NavLink>
           </li>
+          {token && (
+            <li>
+              <NavLink to={"/prediction"}>Prediction</NavLink>
+            </li>
+          )}
           <li>
             <NavLink to={"/doctors"}>Doctors</NavLink>
           </li>
@@ -66,31 +71,27 @@ const Navbar = () => {
               </li>
             </>
           )}
+          <li>
+            <NavLink className="btn btn-danger" to={"/emergency"}>
+              Emergency
+            </NavLink>
+          </li>
           {!token ? (
             <>
               <li>
-                <NavLink
-                  className="btn"
-                  to={"/login"}
-                >
+                <NavLink className="btn" to={"/login"}>
                   Login
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  className="btn"
-                  to={"/register"}
-                >
+                <NavLink className="btn" to={"/register"}>
                   Register
                 </NavLink>
               </li>
             </>
           ) : (
             <li>
-              <span
-                className="btn"
-                onClick={logoutFunc}
-              >
+              <span className="btn" onClick={logoutFunc}>
                 Logout
               </span>
             </li>

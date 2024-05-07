@@ -8,10 +8,12 @@ import React, { lazy, Suspense } from "react";
 import Loading from "./components/Loading";
 
 const Home = lazy(() => import("./pages/Home"));
+const Prediction = lazy(() => import("./pages/Prediction"))
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Appointments = lazy(() => import("./pages/Appointments"));
 const Doctors = lazy(() => import("./pages/Doctors"));
 const Profile = lazy(() => import("./pages/Profile"));
+const Emergency = lazy(() => import("./pages/Emergency"));
 const Notifications = lazy(() => import("./pages/Notifications"));
 const ApplyDoctor = lazy(() => import("./pages/ApplyDoctor"));
 const Error = lazy(() => import("./pages/Error"));
@@ -22,10 +24,7 @@ function App() {
       <Toaster />
       <Suspense fallback={<Loading />}>
         <Routes>
-          <Route
-            path="/login"
-            element={<Login />}
-          />
+          <Route path="/login" element={<Login />} />{" "}
           <Route
             path="/register"
             element={
@@ -33,15 +32,14 @@ function App() {
                 <Register />
               </Public>
             }
-          />
-          <Route
-            path="/"
-            element={<Home />}
-          />
-          <Route
-            path="/doctors"
-            element={<Doctors />}
-          />
+          />{" "}
+          <Route path="/" element={<Home />} />{" "}
+          <Route path="/doctors" element={<Doctors />} />{" "}
+          <Route path="/prediction" element={
+            <Protected>
+              <Prediction />
+            </Protected>
+          } />
           <Route
             path="/appointments"
             element={
@@ -49,7 +47,7 @@ function App() {
                 <Appointments />
               </Protected>
             }
-          />
+          />{" "}
           <Route
             path="/notifications"
             element={
@@ -57,7 +55,7 @@ function App() {
                 <Notifications />
               </Protected>
             }
-          />
+          />{" "}
           <Route
             path="/applyfordoctor"
             element={
@@ -65,7 +63,7 @@ function App() {
                 <ApplyDoctor />
               </Protected>
             }
-          />
+          />{" "}
           <Route
             path="/profile"
             element={
@@ -73,45 +71,50 @@ function App() {
                 <Profile />
               </Protected>
             }
-          />
+          />{" "}
+          <Route
+            path="/emergency"
+            element={
+              <public>
+                <Emergency />
+              </public>
+            }
+          />{" "}
           <Route
             path="/dashboard/users"
             element={
               <Admin>
-                <Dashboard type={"users"} />
+                <Dashboard type={"users"} />{" "}
               </Admin>
             }
-          />
+          />{" "}
           <Route
             path="/dashboard/doctors"
             element={
               <Admin>
-                <Dashboard type={"doctors"} />
+                <Dashboard type={"doctors"} />{" "}
               </Admin>
             }
-          />
+          />{" "}
           <Route
             path="/dashboard/appointments"
             element={
               <Protected>
-                <Dashboard type={"appointments"} />
+                <Dashboard type={"appointments"} />{" "}
               </Protected>
             }
-          />
+          />{" "}
           <Route
             path="/dashboard/applications"
             element={
               <Protected>
-                <Dashboard type={"applications"} />
+                <Dashboard type={"applications"} />{" "}
               </Protected>
             }
-          />
-          <Route
-            path="*"
-            element={<Error />}
-          />
-        </Routes>
-      </Suspense>
+          />{" "}
+          <Route path="*" element={<Error />} />{" "}
+        </Routes>{" "}
+      </Suspense>{" "}
     </Router>
   );
 }

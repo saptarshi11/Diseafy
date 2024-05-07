@@ -82,7 +82,7 @@ const ApplyDoctor = () => {
               type="number"
               name="fees"
               className="form-input"
-              placeholder="Enter your fees  (in dollars)"
+              placeholder="Enter your fees  (in Rupee)"
               value={formDetails.fees}
               onChange={inputChange}
             />
