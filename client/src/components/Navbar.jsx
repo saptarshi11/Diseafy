@@ -19,6 +19,20 @@ const Navbar = () => {
       : ""
   );
 
+  const handleMouseEnter = () => {
+    const dropdownContent = document.querySelector(".dropdown-content");
+    if (dropdownContent) {
+      dropdownContent.style.display = "block";
+    }
+  };
+
+  const handleMouseLeave = () => {
+    const dropdownContent = document.querySelector(".dropdown-content");
+    if (dropdownContent) {
+      dropdownContent.style.display = "none";
+    }
+  };
+
   const logoutFunc = () => {
     dispatch(setUserInfo({}));
     localStorage.removeItem("token");
@@ -39,7 +53,19 @@ const Navbar = () => {
           </li>
           {token && (
             <li>
-              <NavLink to={"/prediction"}>Prediction</NavLink>
+              <div
+                className="dropdown"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <span>Services</span>
+                <div className="dropdown-content">
+                  <NavLink to={"/prediction"}>Prediction</NavLink>
+                  <a href="https://saptarshi11.github.io/BMI-Caculator/">
+                    BMI Calculator
+                  </a>
+                </div>
+              </div>
             </li>
           )}
           <li>
