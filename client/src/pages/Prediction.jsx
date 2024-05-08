@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 import "../styles/prediction.css";
 
-axios.defaults.baseURL = process.env.REACT_APP_FLASK_DOMAIN;
+axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 const Prediction = () => {
   const [searchTerm, setSearchTerm] = useState("");

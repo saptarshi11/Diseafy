@@ -22,6 +22,24 @@ app.use("/api/user", userRouter);
 app.use("/api/doctor", doctorRouter);
 app.use("/api/appointment", appointRouter);
 app.use("/api/notification", notificationRouter);
+app.use('/api/predict', (req, res) => {
+    const body = req.body;
+    console.log(process.env.PREDICTION_API);
+    fetch(process.env.PREDICTION_API, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            res.send(data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+});
 app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get("*", (req, res) => {
