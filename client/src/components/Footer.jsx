@@ -1,8 +1,9 @@
-import React from "react";
-import "../styles/footer.css";
-import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
-import { HashLink } from "react-router-hash-link";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import '../styles/footer.css';
+import { FaFacebookF, FaYoutube, FaInstagram } from 'react-icons/fa';
+import { RiTwitterXLine } from 'react-icons/ri';
+import { HashLink } from 'react-router-hash-link';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -13,22 +14,22 @@ const Footer = () => {
             <h3>Links</h3>
             <ul>
               <li>
-                <NavLink to={"/"}>Home</NavLink>
+                <NavLink to={'/'}>Home</NavLink>
               </li>
               <li>
-                <NavLink to={"/doctors"}>Doctors</NavLink>
+                <NavLink to={'/doctors'}>Doctors</NavLink>
               </li>
               <li>
-                <NavLink to={"/appointments"}>Appointments</NavLink>
+                <NavLink to={'/appointments'}>Appointments</NavLink>
               </li>
               <li>
-                <NavLink to={"/notifications"}>Notifications</NavLink>
+                <NavLink to={'/notifications'}>Notifications</NavLink>
               </li>
               <li>
-                <HashLink to={"/#contact"}>Contact Us</HashLink>
+                <HashLink to={'/#contact'}>Contact Us</HashLink>
               </li>
               <li>
-                <NavLink to={"/profile"}>Profile</NavLink>
+                <NavLink to={'/profile'}>Profile</NavLink>
               </li>
             </ul>
           </div>
@@ -38,7 +39,7 @@ const Footer = () => {
               <li className="facebook">
                 <a
                   href="https://www.facebook.com/"
-                  target={"_blank"}
+                  target={'_blank'}
                   rel="noreferrer"
                 >
                   <FaFacebookF />
@@ -47,7 +48,7 @@ const Footer = () => {
               <li className="youtube">
                 <a
                   href="https://www.youtube.com/"
-                  target={"_blank"}
+                  target={'_blank'}
                   rel="noreferrer"
                 >
                   <FaYoutube />
@@ -56,24 +57,29 @@ const Footer = () => {
               <li className="instagram">
                 <a
                   href="https://www.instagram.com/"
-                  target={"_blank"}
+                  target={'_blank'}
                   rel="noreferrer"
                 >
                   <FaInstagram />
+                </a>
+              </li>
+              <li className="Twitter">
+                <a href="https://www.x.com/" target={'_blank'} rel="noreferrer">
+                  <RiTwitterXLine />
                 </a>
               </li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          Made by{" "}
+          Made by{' '}
           <a
             href="https://github.com/saptarshi11/Diseafy"
             target="_blank"
             rel="noreferrer"
           >
             Diseafy.io
-          </a>{" "}
+          </a>{' '}
           © {new Date().getFullYear()}
         </div>
       </footer>
