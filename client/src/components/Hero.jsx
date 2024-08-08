@@ -1,14 +1,29 @@
 import React from "react";
 import image from "../images/heroimg.jpg";
 import "../styles/hero.css";
+import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-content">
         <h1>
-          Your Health, <br />
-          Our Responsibility
+        <TypeAnimation
+  sequence={[
+    // Same substring at the start will only be typed once, initially
+    'Your Health',
+    1000,
+    'Our Responsibility',
+    1000,
+    'Our Mission',
+    1000,
+    'Our Vision',
+    1000,
+  ]}
+  speed={30}
+  style={{ fontSize: '1em' }}
+  repeat={Infinity}
+/>
         </h1>
         <p>
         Investing in your health today yields abundant rewards tomorrow. 
