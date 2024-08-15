@@ -12,7 +12,7 @@ Welcome to our comprehensive healthcare platform! Our website offers a seamless 
 
 ### 🌐 Link:
 
-<h4> Live Site: None Yet </h4>
+<h4> Live Site: <a href="https://diseafy-six.vercel.app/">https://diseafy-six.vercel.app/</a> </h4>
 
 <h4> GitHub Repo: <a href="https://github.com/saptarshi11/Diseafy">https://github.com/saptarshi11/Diseafy</a>  </h4>
 
